@@ -4,14 +4,35 @@
     left: 0;
 }
 
+#header a {
+    color: #212529;
+}
+
 .container {
     padding-top: 5vh;
     max-width: 95vw;
+    min-height: calc(100vh - 65px - 6vh - 24px);
 }
 
 #student-list {
     margin-top: 5vh;
 }
+
+.footer {
+    position: sticky;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #f5f5f5;
+}
+
+.footer-content {
+    padding: 3vh 5vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 
 
 
