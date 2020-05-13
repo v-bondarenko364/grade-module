@@ -5,10 +5,13 @@
  */
 package repos;
 
+import com.client.gradeModule.domain.Student;
+import org.springframework.data.repository.CrudRepository;
+
 /**
  *
  * @author dkd
  */
-public interface StudentRepo {
+public interface StudentRepo extends CrudRepository<Student, Integer> {
     
 }
