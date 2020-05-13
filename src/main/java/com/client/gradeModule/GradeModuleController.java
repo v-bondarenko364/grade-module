@@ -4,13 +4,11 @@ import com.client.gradeModule.domain.Student;
 import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-//import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import repos.StudentRepo;
+import com.client.gradeModule.repositories.StudentRepo;
 
-//@Repository
 @Controller
 public class GradeModuleController {
     @Autowired
