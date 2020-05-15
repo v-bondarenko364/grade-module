@@ -5,15 +5,15 @@
  */
 package com.client.gradeModule.repositories;
 
-import com.client.gradeModule.domain.Student;
-import java.util.List;
+import com.client.gradeModule.domain.Score;
 import org.springframework.data.repository.CrudRepository;
-
+//import org.springframework.stereotype.Repository;
 
 /**
+ *
  * @author dkd
  */
-public interface StudentRepo extends CrudRepository<Student, Integer> {
-    
-//    List<Student> findByName(String name);
+//@Repository
+public interface ScoreRepo extends CrudRepository<Score, Integer> {
+//    Score getById(Long id);
 }

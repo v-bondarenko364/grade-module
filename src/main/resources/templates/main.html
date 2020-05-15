@@ -15,95 +15,85 @@
         <!-- Custom styles -->
         <link rel="stylesheet" href="/css/main.css">
     </head>
-    
-        <!--  TODO: move project name into separate variable  -->
-        <header id="header" class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 bg-white border-bottom shadow-sm">
-            <h5>
-                <a class="my-0 mr-md-auto font-weight-normal" href="/">Grade.pr</a>
-            </h5>
-        </header>
-        <div class="container">
 
-            <h1 class="display-5 text-center">Journal</h1>
-            <p class="lead text-center">Discipline: Artifical inteligence</p>
-            <p class="lead text-center">Lecturer: Test A.P. </p>
+    <!--  TODO: move project name into separate variable  -->
+    <header id="header" class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 bg-white border-bottom shadow-sm">
+        <h5>
+            <a class="my-0 mr-md-auto font-weight-normal" href="/">Grade.pr</a>
+        </h5>
+    </header>
+    <div class="container">
 
-            <table id="student-list" class="table table-hover">
-                <thead>
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Student</th>
-                        <th scope="col">Score</th>
-                        <th scope="col">Score</th>
-                        <th scope="col">Score</th>
-                        <th scope="col">Score</th>
-                        <th scope="col">Score</th>
-                        <th scope="col">Score</th>
-                        <th scope="col">Score</th>
-                        <th scope="col">Total</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>John P.K.</td>
-                        <td>10</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>7</td>
-                        <td>-</td>
-                        <td>17</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>John P.K.</td>
-                        <td>10</td>
-                        <td>-</td>
-                        <td>10</td>
-                        <td>4</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>24</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>John P.K.</td>
-                        <td>10</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>21</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>31</td>
-                    </tr>
-                </tbody>
-            </table>
+        <h1 class="display-5 text-center">Journal</h1>
+        <p class="lead text-center">Discipline: Artifical inteligence</p>
+        <p class="lead text-center">Lecturer: Test A.P. </p>
+
+        <table id="student-list" class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Student</th>
+                    <th scope="col">Score</th>
+                    <th scope="col">Score</th>
+                    <th scope="col">Score</th>
+                    <th scope="col">Score</th>
+                    <th scope="col">Score</th>
+                    <th scope="col">Score</th>
+                    <th scope="col">Score</th>
+                    <th scope="col">Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="student : ${students}">
+                    <th scope="row" th:utext="${student.id}">...</th>
+                    <td th:utext="${student.name}">...</td>
+                    <td>10</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>7</td>
+                    <td>-</td>
+                    <td>17</td>
+                </tr>
+<!--                <tr th:each="score : ${scores}">
+                    <th scope="row" th:utext="${score.id}">...</th>-->
+                    <!--<td th:utext="${score.student_id}">...</td>-->
+                    <!--<td th:utext="${score.assessment}">...</td>-->
+<!--                    <td>-</td>
+                    <td>10</td>
+                    <td>4</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>24</td>
+                </tr>-->
+                <!--
+                <tr>
+                    <th scope="row">3</th>
+                    <td>John P.K.</td>
+                    <td>10</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>21</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>31</td>
+                </tr>-->
+            </tbody>
+        </table>
+    </div>
+    <footer class="footer">
+        <div class="footer-content">
+            <a class="text-muted mb-0" href="/">© Project.Pr</a>
+            <p class="text-muted mb-0">All Rights Reserved</p>
         </div>
-        <footer class="footer">
-            <div class="footer-content">
-                <a class="text-muted mb-0" href="/">© Project.Pr</a>
-                <p class="text-muted mb-0">All Rights Reserved</p>
-            </div>
-        </footer>
-        
-        <form method="post">
-            <input type="text" name="name" placeholder="Vvedite imya">
-            <button type="submit">Otpravit'<button>
-        </form>>
-        
-        <div>
-            <div>TEST</div>
-            {{ #students }}
-            <div>
-                <b>{{ id }}</b>
-                <i>{{ name }}</i>
-            </div>
-            {{ /students }}
-        </div>
-        
+    </footer>
+
+<!--    <form method="post" action="filter">
+        <input type="text" name="filter">
+        <input type="submit" value="Otpravit'">
+    </form>-->
     
 </html>

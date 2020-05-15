@@ -9,23 +9,26 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 /**
  *
  * @author dkd
  */
 @Entity
+@Table(name="score")
 public class Score {
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
+    private Integer assessment;
+    @ManyToOne
+    private Student student;
 
-    private Integer student_id;
+    public Score() {     
+    }
     
-    private Integer score;
-
-
     public Integer getId() {
         return id;
     }
@@ -33,20 +36,20 @@ public class Score {
     public void setId(Integer id) {
         this.id = id;
     }
-
-    public Integer getStudentId() {
-        return student_id;
+    
+    public Integer getAssessment() {
+        return assessment;
     }
 
-    public void getStudentId(Integer student_id) {
-        this.student_id = student_id;
+    public void setAssessment(Integer assessment) {
+        this.assessment = assessment;
     }
     
-    public Integer getScore() {
-        return score;
+     public Student student() {
+        return student;
     }
 
-    public void setScore(Integer score) {
-        this.score = score;
+    public void student(Student student) {
+        this.student = student;
     }
 }

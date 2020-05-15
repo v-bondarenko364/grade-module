@@ -5,22 +5,29 @@
  */
 package com.client.gradeModule.domain;
 
+import java.util.Set;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 /**
  *
  * @author dkd
  */
 @Entity
+@Table(name="student")
 public class Student {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     private String name;
+    @OneToMany(mappedBy="student", cascade=CascadeType.ALL, orphanRemoval=true)
+    private Set<Score> score;
 
     public Student() {
     }
