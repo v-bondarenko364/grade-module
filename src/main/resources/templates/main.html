@@ -16,7 +16,6 @@
         <link rel="stylesheet" href="/css/main.css">
     </head>
 
-    <!--  TODO: move project name into separate variable  -->
     <header id="header" class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 bg-white border-bottom shadow-sm">
         <h5>
             <a class="my-0 mr-md-auto font-weight-normal" href="/">Grade.pr</a>
@@ -33,13 +32,7 @@
                 <tr>
                     <th scope="col">#</th>
                     <th scope="col">Name</th>
-                    <th scope="col">Scores</th>
-                    <!--                    <th scope="col">Score</th>
-                                        <th scope="col">Score</th>
-                                        <th scope="col">Score</th>
-                                        <th scope="col">Score</th>
-                                        <th scope="col">Score</th>
-                                        <th scope="col">Score</th>-->
+                    <td th:each="score : ${students[0].score}">Score</td>
                     <th scope="col">Total</th>
                 </tr>
             </thead>
@@ -47,24 +40,11 @@
                 <tr th:each="student : ${students}">
                     <th scope="row" th:utext="${student.id}">...</th>
                     <td th:utext="${student.name}">..</td>
-                    <td><p th:each="score : ${student.score}">
-                            <span th:text="${score.assessment} ">...</span>
-                        </p>
+                    <td th:each="score : ${student.score}" th:text="${score.assessment} " th:data-score-id="${score.id}">
+                        ...
                     </td>
+                    <td th:utext="${#aggregates.sum(student.score.![assessment])}">...</td>
                 </tr>
-     
-<!--                <tr>
-                    <th scope="row">3</th>
-                    <td>John P.K.</td>
-                    <td>10</td>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>21</td>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>31</td>
-                </tr>-->
             </tbody>
         </table>
     </div>
@@ -74,10 +54,4 @@
             <p class="text-muted mb-0">All Rights Reserved</p>
         </div>
     </footer>
-
-    <!--    <form method="post" action="filter">
-            <input type="text" name="filter">
-            <input type="submit" value="Otpravit'">
-        </form>-->
-
 </html>
