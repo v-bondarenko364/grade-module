@@ -45,11 +45,11 @@ public class Score {
         this.assessment = assessment;
     }
     
-     public Student student() {
+     public Student getStudent() {
         return student;
     }
 
-    public void student(Student student) {
+    public void setStudent(Student student) {
         this.student = student;
     }
 }

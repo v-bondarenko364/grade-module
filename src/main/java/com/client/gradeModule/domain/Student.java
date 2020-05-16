@@ -19,14 +19,14 @@ import javax.persistence.Table;
  * @author dkd
  */
 @Entity
-@Table(name="student")
+@Table(name = "student")
 public class Student {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     private String name;
-    @OneToMany(mappedBy="student", cascade=CascadeType.ALL, orphanRemoval=true)
+    @OneToMany(mappedBy = "student", cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<Score> score;
 
     public Student() {
@@ -50,5 +50,13 @@ public class Student {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Set<Score> getScore() {
+        return score;
+    }
+
+    public void setScore(Set<Score> score) {
+        this.score = score;
     }
 }

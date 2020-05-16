@@ -32,44 +32,28 @@
             <thead>
                 <tr>
                     <th scope="col">#</th>
-                    <th scope="col">Student</th>
-                    <th scope="col">Score</th>
-                    <th scope="col">Score</th>
-                    <th scope="col">Score</th>
-                    <th scope="col">Score</th>
-                    <th scope="col">Score</th>
-                    <th scope="col">Score</th>
-                    <th scope="col">Score</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Scores</th>
+                    <!--                    <th scope="col">Score</th>
+                                        <th scope="col">Score</th>
+                                        <th scope="col">Score</th>
+                                        <th scope="col">Score</th>
+                                        <th scope="col">Score</th>
+                                        <th scope="col">Score</th>-->
                     <th scope="col">Total</th>
                 </tr>
             </thead>
             <tbody>
                 <tr th:each="student : ${students}">
                     <th scope="row" th:utext="${student.id}">...</th>
-                    <td th:utext="${student.name}">...</td>
-                    <td>10</td>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>7</td>
-                    <td>-</td>
-                    <td>17</td>
+                    <td th:utext="${student.name}">..</td>
+                    <td><p th:each="score : ${student.score}">
+                            <span th:text="${score.assessment} ">...</span>
+                        </p>
+                    </td>
                 </tr>
-<!--                <tr th:each="score : ${scores}">
-                    <th scope="row" th:utext="${score.id}">...</th>-->
-                    <!--<td th:utext="${score.student_id}">...</td>-->
-                    <!--<td th:utext="${score.assessment}">...</td>-->
-<!--                    <td>-</td>
-                    <td>10</td>
-                    <td>4</td>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>24</td>
-                </tr>-->
-                <!--
-                <tr>
+     
+<!--                <tr>
                     <th scope="row">3</th>
                     <td>John P.K.</td>
                     <td>10</td>
@@ -91,9 +75,9 @@
         </div>
     </footer>
 
-<!--    <form method="post" action="filter">
-        <input type="text" name="filter">
-        <input type="submit" value="Otpravit'">
-    </form>-->
-    
+    <!--    <form method="post" action="filter">
+            <input type="text" name="filter">
+            <input type="submit" value="Otpravit'">
+        </form>-->
+
 </html>

@@ -6,7 +6,10 @@
 package com.client.gradeModule.repositories;
 
 import com.client.gradeModule.domain.Score;
+import com.client.gradeModule.domain.Student;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.query.Param;
 //import org.springframework.stereotype.Repository;
 
 /**
@@ -16,4 +19,6 @@ import org.springframework.data.repository.CrudRepository;
 //@Repository
 public interface ScoreRepo extends CrudRepository<Score, Integer> {
 //    Score getById(Long id);
+    @Query("from Score a where a.student.id=:id")
+    public Iterable<Score> findByStudentId(@Param("id") int id);
 }
