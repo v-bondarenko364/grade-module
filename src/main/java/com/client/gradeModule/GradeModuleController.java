@@ -12,6 +12,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.client.gradeModule.repositories.StudentRepo;
 import java.util.HashMap;
 import java.util.List;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 public class GradeModuleController {
@@ -30,6 +34,26 @@ public class GradeModuleController {
         return "main";
     }
     
+    // update assessment
+//    @RequestMapping(method=RequestMethod.PUT, value="/{id}")
+//    public void updateScore(@RequestBody Score score, @PathVariable String id) {
+//        Iterable<Score> score = scoreRepo.findById(Integer id);
+//        
+//        model.put("score", score);
+//        
+//        return "main";
+//    }
+    
+    
+//    @GetMapping("/")
+//    public String get(Map<String, Object> model) {
+//        Iterable<Score> score = studentRepo.findAll();
+//        
+//        model.put("students", students);
+//        
+//        return "main";
+//    }
+    
     
     // get all assessment with students
 //    @GetMapping("/")
@@ -45,12 +69,12 @@ public class GradeModuleController {
     
 //    // for create new students
 //    @PostMapping
-//    public String add(@RequestParam String name, Map<String, Object> model) {
-//        Student student = new Student(name);
-//        studentRepo.save(student);
+//    public String add(@RequestParam String assessment, Map<String, Object> model) {
+//        Score score = new Score(assessment);
+//        scoreRepo.save(score);
 //        
-//        Iterable<Student> students = studentRepo.findAll();
-//        model.put("students", students);
+//        Iterable<Score> score = scoreRepo.findAll();
+//        model.put("score", score);
 //        
 //        return "main";
 //    }

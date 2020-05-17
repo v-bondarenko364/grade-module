@@ -18,7 +18,10 @@ import org.springframework.data.repository.query.Param;
  */
 //@Repository
 public interface ScoreRepo extends CrudRepository<Score, Integer> {
-//    Score getById(Long id);
     @Query("from Score a where a.student.id=:id")
     public Iterable<Score> findByStudentId(@Param("id") int id);
+
+//    public Iterable<Score> findById();
+    
+   
 }

@@ -28,7 +28,7 @@ public class Score {
 
     public Score() {     
     }
-    
+
     public Integer getId() {
         return id;
     }
