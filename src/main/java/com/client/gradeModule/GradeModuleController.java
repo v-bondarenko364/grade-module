@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.client.gradeModule.repositories.StudentRepo;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Optional;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -35,37 +36,17 @@ public class GradeModuleController {
     }
     
     // update assessment
-//    @RequestMapping(method=RequestMethod.PUT, value="/{id}")
-//    public void updateScore(@RequestBody Score score, @PathVariable String id) {
-//        Iterable<Score> score = scoreRepo.findById(Integer id);
-//        
-//        model.put("score", score);
-//        
-//        return "main";
-//    }
+    @RequestMapping
+    public String updateScore(Integer id, Integer assessment) {
+        Score score = scoreRepo.findById(id).get();
+        score.setAssessment(assessment);
+        
+        scoreRepo.save(score);
+        
+        return "main";
+    }
     
-    
-//    @GetMapping("/")
-//    public String get(Map<String, Object> model) {
-//        Iterable<Score> score = studentRepo.findAll();
-//        
-//        model.put("students", students);
-//        
-//        return "main";
-//    }
-    
-    
-    // get all assessment with students
-//    @GetMapping("/")
-//    public String main(Map<String, Object> model) {
-//        Iterable<Score> scores = scoreRepo.findAll();
-//        
-//        model.put("scores", scores);
-//        
-//
-//        return "main";
-//    }
-    
+
     
 //    // for create new students
 //    @PostMapping

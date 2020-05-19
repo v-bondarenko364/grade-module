@@ -25,7 +25,7 @@ public class Score {
     private Integer assessment;
     @ManyToOne
     private Student student;
-
+   
     public Score() {     
     }
 
@@ -52,4 +52,5 @@ public class Score {
     public void setStudent(Student student) {
         this.student = student;
     }
+    
 }
