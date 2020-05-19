@@ -13,6 +13,15 @@ import com.client.gradeModule.repositories.StudentRepo;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Optional;
+import javax.enterprise.inject.Produces;
+import javax.servlet.http.HttpServletResponse;
+import javax.ws.rs.Consumes;
+import javax.ws.rs.core.Context;
+import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
+import javax.ws.rs.core.Response.Status;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -34,18 +43,20 @@ public class GradeModuleController {
         
         return "main";
     }
-    
+
     // update assessment
-    @RequestMapping
-    public String updateScore(Integer id, Integer assessment) {
+    @RequestMapping("/score/")
+    public Response updateScore(Integer id, Integer assessment) {
         Score score = scoreRepo.findById(id).get();
         score.setAssessment(assessment);
         
         scoreRepo.save(score);
-        
-        return "main";
+ 
+     return Response
+      .status(Response.Status.OK)
+      .entity(score)
+      .build();
     }
-    
 
     
 //    // for create new students
