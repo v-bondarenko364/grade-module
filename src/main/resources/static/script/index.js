@@ -29,8 +29,8 @@ const updateScore = async () => {
         return;
     }
 
-    // TODO: implement updating
-    await new Promise((resolve) => setTimeout(() => resolve(), 1000));
+    await fetch(`/?id=${scoreId}&assessment=${scoreValue}`, {method: 'PUT'});
+
 
     // update total value
     const scoreDiff = scoreValue - parseInt(scoreEl.text());
