@@ -29,7 +29,7 @@ const updateScore = async () => {
         return;
     }
 
-    await fetch(`/?id=${scoreId}&assessment=${scoreValue}`, {method: 'PUT'});
+    await fetch(`/score/?id=${scoreId}&assessment=${scoreValue}`, {method: 'PUT'});
 
 
     // update total value
