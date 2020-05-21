@@ -5,9 +5,8 @@
  */
 package com.client.gradeModule.domain;
 
-import java.util.Set;
+import java.util.List;
 import javax.persistence.CascadeType;
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -28,7 +27,7 @@ public class Student {
     private Integer id;
     private String name;
     @OneToMany(mappedBy = "student", cascade = CascadeType.ALL, orphanRemoval = true)
-    private Set<Score> score;
+    private List<Score> score;
 
     public Student() {
     }
@@ -53,11 +52,11 @@ public class Student {
         this.name = name;
     }
 
-    public Set<Score> getScore() {
+    public List<Score> getScore() {
         return score;
     }
 
-    public void setScore(Set<Score> score) {
+    public void setScore(List<Score> score) {
         this.score = score;
     }
 }

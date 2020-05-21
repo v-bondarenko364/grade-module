@@ -36,16 +36,13 @@ class DemoCommandLineRunner implements CommandLineRunner {
 
         if (studentRepo.count() == 0) {
             // insert students
-//            Student firstStudent = new Student();
-            firstStudent.setName("Sanya");
+            firstStudent.setName("Olexander");
             studentRepo.save(firstStudent);
 
-//            Student secondStudent = new Student();
-            secondStudent.setName("Pasha");
+            secondStudent.setName("Pavel");
             studentRepo.save(secondStudent);
-
-//            Student thirdStudent = new Student();
-            thirdStudent.setName("Olya");
+            
+            thirdStudent.setName("Diana");
             studentRepo.save(thirdStudent);
         }
 
@@ -110,8 +107,69 @@ class DemoCommandLineRunner implements CommandLineRunner {
             firstStudent.getId();
             firstStudentTenScore.setStudent(firstStudent);
             scoreRepo.save(firstStudentTenScore);
+            //11
+            Score firstStudentElevenScore = new Score();
+            firstStudentElevenScore.setAssessment(4);
+            firstStudent.getId();
+            firstStudentElevenScore.setStudent(firstStudent);
+            scoreRepo.save(firstStudentElevenScore);
+            //12
+            Score firstStudentTwelveScore = new Score();
+            firstStudentTwelveScore.setAssessment(5);
+            firstStudent.getId();
+            firstStudentTwelveScore.setStudent(firstStudent);
+            scoreRepo.save(firstStudentTwelveScore);
+            //13
+            Score firstStudentThirteenScore = new Score();
+            firstStudentThirteenScore.setAssessment(3);
+            firstStudent.getId();
+            firstStudentThirteenScore.setStudent(firstStudent);
+            scoreRepo.save(firstStudentThirteenScore);
+            //14
+            Score firstStudentFourteenScore = new Score();
+            firstStudentFourteenScore.setAssessment(3);
+            firstStudent.getId();
+            firstStudentFourteenScore.setStudent(firstStudent);
+            scoreRepo.save(firstStudentFourteenScore);
+            //15
+            Score firstStudentFifteenScore = new Score();
+            firstStudentFifteenScore.setAssessment(3);
+            firstStudent.getId();
+            firstStudentFifteenScore.setStudent(firstStudent);
+            scoreRepo.save(firstStudentFifteenScore);
+            //16
+            Score firstStudentSixteenScore = new Score();
+            firstStudentSixteenScore.setAssessment(5);
+            firstStudent.getId();
+            firstStudentSixteenScore.setStudent(firstStudent);
+            scoreRepo.save(firstStudentSixteenScore);
+            //17
+            Score firstStudentSeventeenScore = new Score();
+            firstStudentSeventeenScore.setAssessment(4);
+            firstStudent.getId();
+            firstStudentSeventeenScore.setStudent(firstStudent);
+            scoreRepo.save(firstStudentSeventeenScore);
+            //18
+            Score firstStudentEighteenScore = new Score();
+            firstStudentEighteenScore.setAssessment(4);
+            firstStudent.getId();
+            firstStudentEighteenScore.setStudent(firstStudent);
+            scoreRepo.save(firstStudentEighteenScore);
+            //19
+            Score firstStudentNineteenScore = new Score();
+            firstStudentNineteenScore.setAssessment(5);
+            firstStudent.getId();
+            firstStudentNineteenScore.setStudent(firstStudent);
+            scoreRepo.save(firstStudentNineteenScore);
+            //20
+            Score firstStudentTwentScore = new Score();
+            firstStudentTwentScore.setAssessment(3);
+            firstStudent.getId();
+            firstStudentTwentScore.setStudent(firstStudent);
+            scoreRepo.save(firstStudentTwentScore);
 
-            // second scores
+            
+            // scores for second student
             Score secondStudentFirstScore = new Score();
             secondStudentFirstScore.setAssessment(4);
             secondStudent.getId();
@@ -171,8 +229,69 @@ class DemoCommandLineRunner implements CommandLineRunner {
             secondStudent.getId();
             secondStudentTenScore.setStudent(secondStudent);
             scoreRepo.save(secondStudentTenScore);
+            //11
+            Score secondStudentElevenScore = new Score();
+            secondStudentElevenScore.setAssessment(5);
+            secondStudent.getId();
+            secondStudentElevenScore.setStudent(secondStudent);
+            scoreRepo.save(secondStudentElevenScore);
+            //12
+            Score secondStudentTwelveScore = new Score();
+            secondStudentTwelveScore.setAssessment(5);
+            secondStudent.getId();
+            secondStudentTwelveScore.setStudent(secondStudent);
+            scoreRepo.save(secondStudentTwelveScore);
+            //13
+            Score secondStudentThirteenScore = new Score();
+            secondStudentThirteenScore.setAssessment(5);
+            secondStudent.getId();
+            secondStudentThirteenScore.setStudent(secondStudent);
+            scoreRepo.save(secondStudentThirteenScore);
+            //14
+            Score secondStudentFourteenScore = new Score();
+            secondStudentFourteenScore.setAssessment(4);
+            secondStudent.getId();
+            secondStudentFourteenScore.setStudent(secondStudent);
+            scoreRepo.save(secondStudentFourteenScore);
+            //15
+            Score secondStudentFifteenScore = new Score();
+            secondStudentFifteenScore.setAssessment(3);
+            secondStudent.getId();
+            secondStudentFifteenScore.setStudent(secondStudent);
+            scoreRepo.save(secondStudentFifteenScore);
+            //16
+            Score secondStudentSixteenScore = new Score();
+            secondStudentSixteenScore.setAssessment(4);
+            secondStudent.getId();
+            secondStudentSixteenScore.setStudent(secondStudent);
+            scoreRepo.save(secondStudentSixteenScore);
+            //17
+            Score secondStudentSeventeenScore = new Score();
+            secondStudentSeventeenScore.setAssessment(5);
+            secondStudent.getId();
+            secondStudentSeventeenScore.setStudent(secondStudent);
+            scoreRepo.save(secondStudentSeventeenScore);
+            //18
+            Score secondStudentEighteenScore = new Score();
+            secondStudentEighteenScore.setAssessment(5);
+            secondStudent.getId();
+            secondStudentEighteenScore.setStudent(secondStudent);
+            scoreRepo.save(secondStudentEighteenScore);
+            //19
+            Score secondStudentNineteenScore = new Score();
+            secondStudentNineteenScore.setAssessment(5);
+            secondStudent.getId();
+            secondStudentNineteenScore.setStudent(secondStudent);
+            scoreRepo.save(secondStudentNineteenScore);
+            //20
+            Score secondStudentTwentyScore = new Score();
+            secondStudentTwentyScore.setAssessment(4);
+            secondStudent.getId();
+            secondStudentTwentyScore.setStudent(secondStudent);
+            scoreRepo.save(secondStudentTwentyScore);
 
-            // third scores
+            
+            // scores for thrird student
             Score thirdStudentFirstScore = new Score();
             thirdStudentFirstScore.setAssessment(4);
             thirdStudent.getId();
@@ -228,10 +347,70 @@ class DemoCommandLineRunner implements CommandLineRunner {
             scoreRepo.save(thirdStudentNineScore);
             //10
             Score thirdStudentTenScore = new Score();
-            thirdStudentTenScore.setAssessment(4);
+            thirdStudentTenScore.setAssessment(5);
             thirdStudent.getId();
             thirdStudentTenScore.setStudent(thirdStudent);
             scoreRepo.save(thirdStudentTenScore);
+            //11
+            Score thirdStudentElevenScore = new Score();
+            thirdStudentElevenScore.setAssessment(4);
+            thirdStudent.getId();
+            thirdStudentElevenScore.setStudent(thirdStudent);
+            scoreRepo.save(thirdStudentElevenScore);
+            //12
+            Score thirdStudentTwelveScore = new Score();
+            thirdStudentTwelveScore.setAssessment(3);
+            thirdStudent.getId();
+            thirdStudentTwelveScore.setStudent(thirdStudent);
+            scoreRepo.save(thirdStudentTwelveScore);
+            //13
+            Score thirdStudentThirteenScore = new Score();
+            thirdStudentThirteenScore.setAssessment(5);
+            thirdStudent.getId();
+            thirdStudentThirteenScore.setStudent(thirdStudent);
+            scoreRepo.save(thirdStudentThirteenScore);
+            //14
+            Score thirdStudentFourteenScore = new Score();
+            thirdStudentFourteenScore.setAssessment(5);
+            thirdStudent.getId();
+            thirdStudentFourteenScore.setStudent(thirdStudent);
+            scoreRepo.save(thirdStudentFourteenScore);
+            //15
+            Score thirdStudentFifteenScore = new Score();
+            thirdStudentFifteenScore.setAssessment(3);
+            thirdStudent.getId();
+            thirdStudentFifteenScore.setStudent(thirdStudent);
+            scoreRepo.save(thirdStudentFifteenScore);
+            //16
+            Score thirdStudentSixteenScore = new Score();
+            thirdStudentSixteenScore.setAssessment(4);
+            thirdStudent.getId();
+            thirdStudentSixteenScore.setStudent(thirdStudent);
+            scoreRepo.save(thirdStudentSixteenScore);
+            //17
+            Score thirdStudentSeventeenScore = new Score();
+            thirdStudentSeventeenScore.setAssessment(5);
+            thirdStudent.getId();
+            thirdStudentSeventeenScore.setStudent(thirdStudent);
+            scoreRepo.save(thirdStudentSeventeenScore);
+            //18
+            Score thirdStudentEighteenScore = new Score();
+            thirdStudentEighteenScore.setAssessment(5);
+            thirdStudent.getId();
+            thirdStudentEighteenScore.setStudent(thirdStudent);
+            scoreRepo.save(thirdStudentEighteenScore);
+            //19
+            Score thirdStudentNineteenScore = new Score();
+            thirdStudentNineteenScore.setAssessment(3);
+            thirdStudent.getId();
+            thirdStudentNineteenScore.setStudent(thirdStudent);
+            scoreRepo.save(thirdStudentNineteenScore);
+            //20
+            Score thirdStudentTwentyScore = new Score();
+            thirdStudentTwentyScore.setAssessment(3);
+            thirdStudent.getId();
+            thirdStudentTwentyScore.setStudent(thirdStudent);
+            scoreRepo.save(thirdStudentTwentyScore);
         }
     }
 

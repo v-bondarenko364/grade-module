@@ -6,7 +6,6 @@
 package com.client.gradeModule.repositories;
 
 import com.client.gradeModule.domain.Student;
-import java.util.List;
 import org.springframework.data.repository.CrudRepository;
 
 
@@ -15,5 +14,4 @@ import org.springframework.data.repository.CrudRepository;
  */
 public interface StudentRepo extends CrudRepository<Student, Integer> {
     
-//    List<Student> findByName(String name);
 }
