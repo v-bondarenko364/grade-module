@@ -3,3 +3,8 @@
 
 # Ignore build folder
 target/
+
+# Ignore properties file
+
+src/main/resources/application.properties
+/nbproject/

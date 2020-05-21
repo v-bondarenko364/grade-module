@@ -11,83 +11,81 @@
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        <script src="/script/index.js"></script>
 
         <!-- Custom styles -->
         <link rel="stylesheet" href="/css/main.css">
     </head>
-    <body>
-        <!--  TODO: move project name into separate variable  -->
-        <header id="header" class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 bg-white border-bottom shadow-sm">
-            <h5>
-                <a class="my-0 mr-md-auto font-weight-normal" href="/">Grade.pr</a>
-            </h5>
-        </header>
-        <div class="container">
 
-            <h1 class="display-5 text-center">Journal</h1>
-            <p class="lead text-center">Discipline: Artifical inteligence</p>
-            <p class="lead text-center">Lecturer: Test A.P. </p>
+    <header id="header" class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 bg-white border-bottom shadow-sm">
+        <h5>
+            <a class="my-0 mr-md-auto font-weight-normal" href="/">Grade.pr</a>
+        </h5>
+    </header>
+    <div class="container">
 
-            <table id="student-list" class="table table-hover">
-                <thead>
+        <h1 class="display-5 text-center">Journal</h1>
+        <p class="lead text-center">Discipline: Artifical inteligence</p>
+        <p class="lead text-center">Lecturer: Test A.P. </p>
+
+        <table id="student-list" class="table table-hover">
+            <thead>
                 <tr>
                     <th scope="col">#</th>
-                    <th scope="col">Student</th>
-                    <th scope="col">Score</th>
-                    <th scope="col">Score</th>
-                    <th scope="col">Score</th>
-                    <th scope="col">Score</th>
-                    <th scope="col">Score</th>
-                    <th scope="col">Score</th>
-                    <th scope="col">Score</th>
+                    <th scope="col">Name</th>
+                    <td th:each="score : ${students[0].score}">Score</td>
                     <th scope="col">Total</th>
                 </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>John P.K.</td>
-                    <td>10</td>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>7</td>
-                    <td>-</td>
-                    <td>17</td>
+            </thead>
+            <tbody>
+                <tr th:each="student : ${students}">
+                    <th scope="row" th:utext="${student.id}">...</th>
+                    <td th:utext="${student.name}">..</td>
+                    <td
+                        class="score"
+                        th:each="score : ${student.score}"
+                        th:text="${score.assessment} "
+                        th:data-score-id="${score.id}"
+                        th:data-student-id="${student.id}"
+                    >
+                        ...
+                    </td>
+                    <td
+                        class="total"
+                        th:data-student-id="${student.id}"
+                        th:utext="${#aggregates.sum(student.score.![assessment])}"
+                    >
+                        ...
+                    </td>
                 </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>John P.K.</td>
-                    <td>10</td>
-                    <td>-</td>
-                    <td>10</td>
-                    <td>4</td>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>24</td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td>John P.K.</td>
-                    <td>10</td>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>21</td>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>31</td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
-        <footer class="footer">
-            <div class="footer-content">
-                <a class="text-muted mb-0" href="/">© Project.Pr</a>
-                <p class="text-muted mb-0">All Rights Reserved</p>
+            </tbody>
+        </table>
+
+        <div id="score-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Grade edit</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <input id="score-input" type="number" min="0" max="100" placeholder="grade" class="form-control">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                        <button id="update-score-btn" type="button" class="btn btn-primary">Confirm</button>
+                    </div>
+                </div>
             </div>
-        </footer>
-    </body>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="footer-content">
+            <a class="text-muted mb-0" href="/">© Project.Pr</a>
+            <p class="text-muted mb-0">All Rights Reserved</p>
+        </div>
+    </footer>
+
 </html>
