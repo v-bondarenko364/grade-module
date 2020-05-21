@@ -5,6 +5,7 @@ import com.client.gradeModule.domain.Student;
 import com.client.gradeModule.repositories.ScoreRepo;
 import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import com.client.gradeModule.repositories.StudentRepo;
@@ -36,36 +37,12 @@ public class GradeModuleController {
 
     // update assessment
     @RequestMapping("/score/")
-    public Response updateScore(Integer id, Integer assessment) {
+    public ResponseEntity<String> updateScore(Integer id, Integer assessment) {
         Score score = scoreRepo.findById(id).get();
         score.setAssessment(assessment);
 
         scoreRepo.save(score);
 
-        return Response
-                .status(Response.Status.OK)
-                .entity(score)
-                .build();
+        return ResponseEntity.status(204).body("Updated");
     }
-
-//    // for create new students
-//    @PostMapping
-//    public String add(@RequestParam String assessment, Map<String, Object> model) {
-//        Score score = new Score(assessment);
-//        scoreRepo.save(score);
-//
-//        Iterable<Score> score = scoreRepo.findAll();
-//        model.put("score", score);
-//
-//        return "main";
-//    }
-    // for filter sdut info
-//    @PostMapping("filter") // for filter on the form
-//    public String filter(@RequestParam String filter, Map<String, Object> model) {
-//        List<Student> students = studentRepo.findByName(filter);
-//
-//        model.put("students", students);
-//
-//        return "main";
-//    }
 }
