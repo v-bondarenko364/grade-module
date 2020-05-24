@@ -6,5 +6,8 @@
 * Run application
 
 
-
-add to Readme how to create in mysql for prepod
+# Для запуска проєкту на Windows необхідно:
+	* завантажити Open Server для Windows та запустити його;
+	* увійти в phpmyadmin та створити базу даних grade;
+	* запустити Spring boot проєкт;
+	* перейти на 127.0.1:8080.
