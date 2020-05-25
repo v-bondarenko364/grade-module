@@ -1,12 +1,12 @@
-# Grade PR
+п»ї# Grade PR
 
 ## To run project you need
 
 * Create application file in /src/main/resources and fill with appropriate settings.
 * Run application
 
-# Для запуску проєкту на Windows необхідно:
-	* завантажити Open Server для Windows та зупустити його;
-	* увійти в phpmyadmin та створити базу даних grade;
-	* запустити Spring boot проєкт;
-	* перейти на 127.0.1:8080.
+# Р”Р»СЏ Р·Р°РїСѓСЃРєСѓ РїСЂРѕС”РєС‚Сѓ РЅР° Windows РЅРµРѕР±С…С–РґРЅРѕ:
+	* Р·Р°РІР°РЅС‚Р°Р¶РёС‚Рё Open Server РґР»СЏ Windows С‚Р° Р·СѓРїСѓСЃС‚РёС‚Рё Р№РѕРіРѕ;
+	* СѓРІС–Р№С‚Рё РІ phpmyadmin С‚Р° СЃС‚РІРѕСЂРёС‚Рё Р±Р°Р·Сѓ РґР°РЅРёС… grade;
+	* Р·Р°РїСѓСЃС‚РёС‚Рё Spring boot РїСЂРѕС”РєС‚;
+	* РїРµСЂРµР№С‚Рё РЅР° 127.0.1:8080.
